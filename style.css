@@ -1,0 +1,355 @@
+/* ====== MOBIL FIRST (DEFAULT) STYLES ====== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    background: #2c3e50;
+    color: white;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.logo h1 {
+    font-size: 1.2rem;
+}
+
+/* Navigation - Mobile (hidden by default) */
+.main-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #2c3e50;
+    padding: 15px;
+}
+
+.main-nav.active {
+    display: block;
+}
+
+.main-nav ul {
+    list-style: none;
+}
+
+.main-nav li {
+    margin: 10px 0;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.main-nav a:hover {
+    background: #34495e;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 30px 15px;
+    background: white;
+    border-radius: 10px;
+    margin: 20px 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.hero h2 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    color: #7f8c8d;
+}
+
+/* Content Boxes - MOBILE VIEW (1 column) */
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.box {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    width: 100%;
+}
+
+.box:hover {
+    transform: translateY(-5px);
+}
+
+.box-header {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.box-header i {
+    font-size: 1.5rem;
+}
+
+.box-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.box p {
+    padding: 15px;
+    color: #555;
+}
+
+.box-info {
+    padding: 15px;
+    background: #f8f9fa;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    color: #666;
+}
+
+.box-info span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Current View Indicator */
+.current-view {
+    margin: 30px 0;
+}
+
+.view-indicator {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.view-indicator h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.view-breakpoints {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.breakpoint {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background: #f8f9fa;
+}
+
+.breakpoint .dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+
+.mobile .dot { background: #e74c3c; }
+.tablet .dot { background: #3498db; }
+.desktop .dot { background: #2ecc71; }
+
+/* Footer */
+footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* ====== TABLET VIEW (772px va undan katta) ====== */
+@media all and (min-width: 772px) {
+    /* DIVLAR UCHUN - 45% kenglik, 2 ustun */
+    .content-wrapper {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .box {
+        width: 45%; /* 45% of viewport width */
+        margin: 0 auto;
+    }
+    
+    /* RASMLAR UCHUN - 30% dan ortiq balandlik emas */
+    .box-image {
+        max-height: 30vh; /* 30% of viewport height */
+        height: auto;
+    }
+    
+    /* Navigation - Tablet */
+    .menu-toggle {
+        display: none;
+    }
+    
+    .main-nav {
+        display: block;
+        position: static;
+        background: none;
+        padding: 0;
+    }
+    
+    .main-nav ul {
+        display: flex;
+        gap: 15px;
+    }
+    
+    .main-nav li {
+        margin: 0;
+    }
+    
+    .main-nav a {
+        padding: 8px 15px;
+    }
+    
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+    
+    .view-breakpoints {
+        flex-direction: row;
+        justify-content: center;
+        gap: 30px;
+    }
+}
+
+/* ====== LARGE SCREEN VIEW (998px va undan katta) ====== */
+@media all and (min-width: 998px) {
+    .container {
+        max-width: 1200px;
+        padding: 0 20px;
+    }
+    
+    /* DIVLAR UCHUN - 30% kenglik, 3 ustun */
+    .box {
+        width: 30%; /* 30% of viewport width */
+    }
+    
+    .content-wrapper {
+        gap: 30px;
+    }
+    
+    /* Header improvements */
+    .logo h1 {
+        font-size: 1.8rem;
+    }
+    
+    .main-nav ul {
+        gap: 25px;
+    }
+    
+    /* Hero section improvements */
+    .hero {
+        padding: 50px;
+    }
+    
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+}
+
+/* ====== PRINT STYLES ====== */
+@media print {
+    .menu-toggle,
+    .box-info,
+    .current-view,
+    footer {
+        display: none;
+    }
+    
+    .box {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+}
+
+/* ====== ORIENTATION SUPPORT ====== */
+@media (orientation: landscape) and (max-width: 771px) {
+    .box-image {
+        height: 150px;
+    }
+}
